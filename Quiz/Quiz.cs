@@ -52,20 +52,23 @@ namespace Quiz
 
         public void RunQuiz()
         {
-            Console.WriteLine(Title + ":");
+            Console.WriteLine(Title + ":" + Environment.NewLine);
             foreach (Question q in Questions)
             {
+                
+
                 Console.WriteLine(q.ToString());
                 string input = Console.ReadLine().Trim();
                 q.UserAnswer = Regex.Replace(input, "(\\p{P})", "");
 
-                
 
+                Console.WriteLine(Environment.NewLine);
                 if (q.GetType().ToString() == "Quiz.ShortAnswer" && q.UserAnswer.Length > 80)
                 {
                     Console.WriteLine("Short answer is too long. Try Again.");
                     q.UserAnswer = Console.ReadLine();
                 }
+                
             }
 
         }

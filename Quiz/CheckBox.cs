@@ -18,6 +18,13 @@ namespace Quiz
             Choices = new Dictionary<char, string>();
         }
 
+        public CheckBox(string query, string answer, Dictionary<char,string> choices)
+        {
+            Query = query;
+            CorrectAnswer = answer;
+            Choices = choices;
+        }
+
         public override bool IsCorrect()
         {
             return CorrectAnswer == UserAnswer.ToUpper();

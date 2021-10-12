@@ -17,7 +17,7 @@ namespace Quiz
 
         public override bool IsCorrect()
         {
-            return CorrectAnswer == UserAnswer || CorrectAnswer == Choices.GetValueOrDefault(char.Parse(UserAnswer.ToUpper()));
+            return CorrectAnswer.ToLower() == UserAnswer.ToLower() || CorrectAnswer == Choices.GetValueOrDefault(char.Parse(UserAnswer.ToUpper()));
 
         }
     }

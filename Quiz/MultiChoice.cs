@@ -18,12 +18,12 @@ namespace Quiz
             Choices = new Dictionary<char, string>();
         }
 
-        //public MultiChoice(string query, string answer, Dictionary<char, string> choices )
-        //{
-        //    Query = query;
-        //    CorrectAnswer = answer;
-        //    Choices = choices;
-        //}
+        public MultiChoice(string query, string answer, Dictionary<char, string> choices)
+        {
+            Query = query;
+            CorrectAnswer = answer;
+            Choices = choices;
+        }
 
         public void AddChoice(char index, string str)
         {

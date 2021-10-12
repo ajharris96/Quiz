@@ -25,11 +25,12 @@ namespace Quiz
 
         public override string ToString()
         {
-            string str= Query + "\n";
+            string str= Query + Environment.NewLine;
             foreach (KeyValuePair<char,string> choice in Choices)
             {
-                str += choice.Key + ": " + choice.Value + "\n";
+                str += choice.Key + ": " + choice.Value + Environment.NewLine;
             }
+
             return str;
         }
 
