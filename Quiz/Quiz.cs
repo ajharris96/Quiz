@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
 
 
 namespace Quiz
@@ -37,7 +40,7 @@ namespace Quiz
 
             foreach (Question q in Questions)
             {
-                if (q.isCorrect())
+                if (q.IsCorrect())
                 {
                     correct++;
                 }
@@ -53,7 +56,16 @@ namespace Quiz
             foreach (Question q in Questions)
             {
                 Console.WriteLine(q.ToString());
-                q.UserAnswer = Console.ReadLine();
+                string input = Console.ReadLine().Trim();
+                q.UserAnswer = Regex.Replace(input, "(\\p{P})", "");
+
+                
+
+                if (q.GetType().ToString() == "Quiz.ShortAnswer" && q.UserAnswer.Length > 80)
+                {
+                    Console.WriteLine("Short answer is too long. Try Again.");
+                    q.UserAnswer = Console.ReadLine();
+                }
             }
 
         }

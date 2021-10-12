@@ -15,9 +15,9 @@ namespace Quiz
             Choices = new Dictionary<char, string> { { 'A', "True" },{ 'B', "False" } };
         }
 
-        public override bool isCorrect()
+        public override bool IsCorrect()
         {
-            return CorrectAnswer == Choices.GetValueOrDefault(char.Parse(UserAnswer.ToUpper()));
+            return CorrectAnswer == UserAnswer || CorrectAnswer == Choices.GetValueOrDefault(char.Parse(UserAnswer.ToUpper()));
 
         }
     }

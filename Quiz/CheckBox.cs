@@ -18,7 +18,7 @@ namespace Quiz
             Choices = new Dictionary<char, string>();
         }
 
-        public override bool isCorrect()
+        public override bool IsCorrect()
         {
             return CorrectAnswer == UserAnswer.ToUpper();
 

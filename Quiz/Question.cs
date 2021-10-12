@@ -10,7 +10,7 @@ namespace Quiz
 
         public Dictionary<char,string> Choices { get; set; }
 
-        public string CorrectAnswer;
+        protected string CorrectAnswer;
 
         public string UserAnswer;
 
@@ -20,7 +20,7 @@ namespace Quiz
 
         }
 
-        abstract public bool isCorrect();
+        abstract public bool IsCorrect();
         
 
         public override string ToString()

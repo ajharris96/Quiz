@@ -31,7 +31,7 @@ namespace Quiz
         }
 
 
-        public override bool isCorrect()
+        public override bool IsCorrect()
         {
             return CorrectAnswer == Choices.GetValueOrDefault(char.Parse(UserAnswer.ToUpper()));
 
